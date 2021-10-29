@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".fragment.FavoriteFragment">
+
+    <ImageView
+        android:id="@+id/img_no_favorite"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:layout_marginTop="48dp"
+        android:contentDescription="@string/background_no_favorite"
+        android:paddingBottom="24dp"
+        android:src="@drawable/bg_sad"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/rv_favorite"
+        app:layout_constraintVertical_bias=".20" />
+
+    <TextView
+        android:id="@+id/tv_no_favorite"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/no_favorite"
+        android:textSize="16sp"
+        android:gravity="center"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/img_no_favorite"
+        app:layout_constraintStart_toStartOf="@+id/img_no_favorite"
+        app:layout_constraintTop_toBottomOf="@+id/img_no_favorite" />
+
+    <TextView
+        android:id="@+id/tv_favorite_banner"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_marginStart="16dp"
+        android:gravity="center_vertical"
+        android:text="@string/your_favorite_users_plural"
+        android:textSize="28sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_favorite"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_favorite_banner"
+        tools:listitem="@layout/item_profile" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

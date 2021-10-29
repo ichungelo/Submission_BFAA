@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:iconSpaceReserved="false">
+    <Preference
+        app:icon="@drawable/ic_language"
+        android:key="@string/key_localization"
+        android:title="@string/localization"
+        app:iconSpaceReserved="false" />
+    <SwitchPreference
+        app:icon="@drawable/ic_moon"
+        android:defaultValue="false"
+        android:key="@string/key_dark_theme"
+        android:title="@string/dark_theme"
+        app:iconSpaceReserved="false" />
+</PreferenceScreen>

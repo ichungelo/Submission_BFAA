@@ -1,0 +1,340 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appbar"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:background="@android:color/transparent"
+        android:outlineAmbientShadowColor="@android:color/transparent"
+        android:outlineSpotShadowColor="@android:color/transparent"
+        tools:ignore="UnusedAttribute">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar_detail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_toolbar"
+            app:contentInsetStart="0dp"
+            app:layout_scrollFlags="scroll">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/img_detail_avatar"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="16dp"
+                    app:civ_border_color="@color/purple_500"
+                    app:civ_border_width="2dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_detail_name"
+                    tools:ignore="ImageContrastCheck"
+                    tools:src="@tools:sample/avatars" />
+
+                <ImageButton
+                    android:id="@+id/btn_external_link"
+                    android:layout_width="36dp"
+                    android:layout_height="36dp"
+                    android:layout_marginEnd="8dp"
+                    android:background="@android:color/transparent"
+                    android:contentDescription="@string/open_with_github_button"
+                    app:layout_constraintBottom_toBottomOf="@+id/btn_favorite"
+                    app:layout_constraintEnd_toStartOf="@+id/btn_favorite"
+                    app:layout_constraintTop_toTopOf="@+id/btn_favorite"
+                    app:srcCompat="@drawable/ic_external_link"
+                    tools:ignore="RedundantDescriptionCheck,TouchTargetSizeCheck" />
+
+                <ImageButton
+                    android:id="@+id/btn_home"
+                    android:layout_width="32dp"
+                    android:layout_height="32dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="16dp"
+                    android:background="@drawable/bg_button"
+                    android:contentDescription="@string/home_button"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:srcCompat="@drawable/ic_home"
+                    tools:ignore="RedundantDescriptionCheck,TouchTargetSizeCheck" />
+
+                <ImageView
+                    android:id="@+id/icon_repository"
+                    android:layout_width="18dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:contentDescription="@string/icon_repository"
+                    app:layout_constraintEnd_toEndOf="@+id/text_repository"
+                    app:layout_constraintStart_toStartOf="@+id/text_repository"
+                    app:layout_constraintTop_toTopOf="@+id/img_detail_avatar"
+                    app:srcCompat="@drawable/ic_git_branch" />
+
+                <ImageView
+                    android:id="@+id/icon_following"
+                    android:layout_width="18dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:contentDescription="@string/icon_following"
+                    app:layout_constraintEnd_toEndOf="@+id/text_following"
+                    app:layout_constraintStart_toStartOf="@+id/text_following"
+                    app:layout_constraintTop_toTopOf="@+id/img_detail_avatar"
+                    app:srcCompat="@drawable/ic_user_plus" />
+
+                <ImageView
+                    android:id="@+id/icon_followers"
+                    android:layout_width="18dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:contentDescription="@string/icon_followers"
+                    app:layout_constraintEnd_toEndOf="@+id/text_followers"
+                    app:layout_constraintStart_toStartOf="@+id/text_followers"
+                    app:layout_constraintTop_toTopOf="@+id/img_detail_avatar"
+                    app:srcCompat="@drawable/ic_user_check" />
+
+                <ImageView
+                    android:id="@+id/icon_location"
+                    android:layout_width="18dp"
+                    android:layout_height="18dp"
+                    android:layout_marginEnd="8dp"
+                    android:contentDescription="@string/icon_location"
+                    app:layout_constraintEnd_toStartOf="@+id/tv_detail_location"
+                    app:layout_constraintTop_toTopOf="@+id/tv_detail_location"
+                    app:srcCompat="@drawable/ic_map_pin" />
+
+                <ImageView
+                    android:id="@+id/icon_company"
+                    android:layout_width="18dp"
+                    android:layout_height="18dp"
+                    android:layout_marginEnd="8dp"
+                    android:contentDescription="@string/icon_company"
+                    app:layout_constraintEnd_toStartOf="@+id/tv_detail_company"
+                    app:layout_constraintTop_toTopOf="@+id/tv_detail_company"
+                    app:srcCompat="@drawable/ic_building_skyscraper" />
+
+                <ImageView
+                    android:id="@+id/icon_username"
+                    android:layout_width="18dp"
+                    android:layout_height="18dp"
+                    android:layout_marginEnd="8dp"
+                    android:contentDescription="@string/icon_username"
+                    app:layout_constraintEnd_toStartOf="@+id/tv_detail_username"
+                    app:layout_constraintTop_toTopOf="@+id/tv_detail_username"
+                    app:srcCompat="@drawable/ic_user" />
+
+                <TextView
+                    android:id="@+id/tv_detail_name"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginEnd="56dp"
+                    android:fontFamily="@font/overlock_sc"
+                    android:gravity="bottom|center"
+                    android:maxLines="2"
+                    android:text="@string/dummy_name"
+                    android:textColor="?android:attr/textColorPrimary"
+                    android:textSize="24sp"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/btn_home"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/tv_detail_username"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="42dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="160dp"
+                    android:maxLines="2"
+                    android:text="@string/dummy_username"
+                    android:textSize="12sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/img_detail_avatar"
+                    tools:ignore="TextContrastCheck" />
+
+                <TextView
+                    android:id="@+id/tv_detail_company"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="42dp"
+                    android:layout_marginTop="4dp"
+                    android:layout_marginEnd="160dp"
+                    android:maxLines="2"
+                    android:text="@string/dummy_company"
+                    android:textSize="12sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_detail_username"
+                    tools:ignore="TextContrastCheck" />
+
+                <TextView
+                    android:id="@+id/tv_detail_location"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="42dp"
+                    android:layout_marginTop="4dp"
+                    android:layout_marginEnd="160dp"
+                    android:layout_marginBottom="16dp"
+                    android:maxLines="2"
+                    android:text="@string/dummy_location"
+                    android:textSize="12sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_detail_company"
+                    tools:ignore="TextContrastCheck" />
+
+                <TextView
+                    android:id="@+id/text_following"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginEnd="16dp"
+                    android:text="@string/following"
+                    android:textSize="12sp"
+                    app:layout_constraintEnd_toStartOf="@+id/text_followers"
+                    app:layout_constraintStart_toEndOf="@+id/img_detail_avatar"
+                    app:layout_constraintTop_toBottomOf="@+id/icon_following"
+                    tools:ignore="TextContrastCheck" />
+
+                <TextView
+                    android:id="@+id/tv_detail_repository"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:gravity="center"
+                    android:maxLines="1"
+                    android:text="@string/dummy_following"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toEndOf="@+id/text_repository"
+                    app:layout_constraintStart_toStartOf="@+id/text_repository"
+                    app:layout_constraintTop_toBottomOf="@+id/text_repository" />
+
+                <TextView
+                    android:id="@+id/text_followers"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="@string/followers"
+                    android:textSize="12sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/img_detail_avatar"
+                    app:layout_constraintTop_toBottomOf="@+id/icon_followers"
+                    tools:ignore="TextContrastCheck" />
+
+                <TextView
+                    android:id="@+id/tv_detail_followers"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:gravity="center"
+                    android:maxLines="1"
+                    android:text="@string/dummy_followers"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toEndOf="@+id/text_followers"
+                    app:layout_constraintStart_toStartOf="@+id/text_followers"
+                    app:layout_constraintTop_toBottomOf="@+id/text_followers" />
+
+                <TextView
+                    android:id="@+id/text_repository"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginEnd="8dp"
+                    android:text="@string/repository"
+                    android:textSize="12sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/text_followers"
+                    app:layout_constraintTop_toTopOf="@+id/text_followers"
+                    tools:ignore="TextContrastCheck" />
+
+                <TextView
+                    android:id="@+id/tv_detail_following"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:gravity="center"
+                    android:maxLines="1"
+                    android:text="@string/dummy_repository"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toEndOf="@+id/text_following"
+                    app:layout_constraintStart_toStartOf="@+id/text_following"
+                    app:layout_constraintTop_toBottomOf="@+id/text_following" />
+
+                <ImageButton
+                    android:id="@+id/btn_favorite"
+                    android:layout_width="36dp"
+                    android:layout_height="36dp"
+                    android:layout_marginEnd="16dp"
+                    android:layout_marginBottom="16dp"
+                    android:background="@android:color/transparent"
+                    android:contentDescription="@string/favorite_button"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:srcCompat="@drawable/ic_favorite_off"
+                    tools:ignore="TouchTargetSizeCheck,RedundantDescriptionCheck" />
+
+                <ImageButton
+                    android:id="@+id/btn_share"
+                    android:layout_width="36dp"
+                    android:layout_height="36dp"
+                    android:layout_marginEnd="8dp"
+                    android:background="@android:color/transparent"
+                    android:contentDescription="@string/share_button"
+                    app:layout_constraintBottom_toBottomOf="@+id/btn_external_link"
+                    app:layout_constraintEnd_toStartOf="@+id/btn_external_link"
+                    app:layout_constraintTop_toTopOf="@+id/btn_external_link"
+                    app:srcCompat="@drawable/ic_share"
+                    tools:ignore="TouchTargetSizeCheck,RedundantDescriptionCheck" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.appcompat.widget.Toolbar>
+
+        <com.google.android.material.tabs.TabLayout
+            android:id="@+id/tabs"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:padding="8dp"
+            app:layout_scrollFlags="noScroll"
+            app:tabGravity="center"
+            app:tabIndicator="@drawable/bg_tab_selected_indicator"
+            app:tabIndicatorAnimationMode="elastic"
+            app:tabIndicatorColor="@android:color/transparent"
+            app:tabIndicatorGravity="stretch"
+            app:tabMode="scrollable"
+            app:tabSelectedTextColor="@color/purple_500">
+
+            <com.google.android.material.tabs.TabItem
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/following" />
+
+            <com.google.android.material.tabs.TabItem
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/followers" />
+        </com.google.android.material.tabs.TabLayout>
+        <ProgressBar
+            android:id="@+id/progressBarDetail"
+            style="?android:attr/progressBarStyle"
+            android:layout_gravity="center"
+            android:background="@drawable/bg_progress"
+            android:indeterminateTint="@color/white"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </com.google.android.material.appbar.AppBarLayout>
+    <androidx.viewpager2.widget.ViewPager2
+        android:id="@+id/view_pager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior"/>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
